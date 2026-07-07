@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Explore HTML5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        header, footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        section {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        label {
+            display: block;
+            margin-top: 14px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        input[type="range"],
+        input[type="color"] {
+            padding: 0;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #222;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        progress, meter {
+            width: 100%;
+            height: 20px;
+            margin-top: 8px;
+        }
+
+        .field-note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+        Page Purpose: This page demonstrates HTML5 features including new input 
+        types (date, range, color), the video element, ARIA accessibility 
+        attributes, progress/meter elements, and built-in form validation.
+    -->
+
+    <header>
+        <h1>Explore HTML5</h1>
+        <p>A hands-on look at some of HTML5's newer features.</p>
+    </header>
+
+    <main role="main">
+
+        <section aria-label="Video demonstration">
+            <h2>Video Element</h2>
+            <video controls aria-label="Sample demonstration video">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section aria-label="Progress and meter demonstration">
+            <h2>Progress &amp; Meter</h2>
+
+            <label for="progress1">Course completion:</label>
+            <progress id="progress1" value="70" max="100" aria-label="Course completion progress, 70 percent"></progress>
+
+            <label for="meter1">Disk usage:</label>
+            <meter id="meter1" value="0.6" min="0" max="1" low="0.3" high="0.8" optimum="0.4" aria-label="Disk usage meter"></meter>
+        </section>
+
+        <section aria-label="Registration form with HTML5 validation">
+            <h2>Registration Form</h2>
+            <form role="form" novalidate>
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required minlength="2" aria-label="Full name" placeholder="e.g. Muhammed Mahat">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-label="Email address" placeholder="you@example.com">
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required aria-label="Date of birth">
+
+                <label for="satisfaction">Satisfaction level (1–10):</label>
+                <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" value="5" aria-label="Satisfaction level slider">
+
+                <label for="favcolor">Favorite Color:</label>
+                <input type="color" id="favcolor" name="favcolor" value="#7a1622" aria-label="Favorite color picker">
+
+                <label for="website">Portfolio URL (optional):</label>
+                <input type="url" id="website" name="website" placeholder="https://github.com/muhammedmahat" aria-label="Portfolio website URL">
+                <p class="field-note">This field must start with http:// or https:// if filled in.</p>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Muhammed Mahat. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
