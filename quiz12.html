@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Layout Demo</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ===== RESPONSIVE NAVBAR (Flexbox) ===== -->
+    <nav class="navbar">
+        <div class="nav-brand">🌀 Flexbox Demo</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-toggle">☰</div>
+    </nav>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+        <header class="page-header">
+            <h1>📦 Flexbox Layout Demo</h1>
+            <p class="subtitle">Explore <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> &amp; responsive navbar</p>
+        </header>
+
+        <!-- DESCRIPTION -->
+        <section class="intro-card">
+            <h2>🧩 Flex container &amp; child boxes</h2>
+            <p>
+                The container below uses <strong>display: flex</strong> with 
+                <code>justify-content: center</code> (horizontal alignment),
+                <code>align-items: center</code> (vertical alignment),
+                and <code>flex-wrap: wrap</code> (so items wrap on smaller screens).
+            </p>
+            <p class="hint">📐 Resize the window to see <strong>flex-wrap</strong> in action and the navbar collapse.</p>
+        </section>
+
+        <!-- ===== FLEX CONTAINER WITH 4+ CHILD BOXES ===== -->
+        <section class="flex-demo-section">
+            <h2>🎯 Flex container</h2>
+            <div class="flex-container">
+                <div class="flex-item item-1">1<br /><span>🍎</span></div>
+                <div class="flex-item item-2">2<br /><span>🍌</span></div>
+                <div class="flex-item item-3">3<br /><span>🍇</span></div>
+                <div class="flex-item item-4">4<br /><span>🍊</span></div>
+                <div class="flex-item item-5">5<br /><span>🍉</span></div>
+                <div class="flex-item item-6">6<br /><span>🥝</span></div>
+            </div>
+            <div class="flex-props-info">
+                <p>
+                    <span class="prop-tag">justify-content: center</span>
+                    <span class="prop-tag">align-items: center</span>
+                    <span class="prop-tag">flex-wrap: wrap</span>
+                    <span class="prop-tag">gap: 20px</span>
+                </p>
+                <p class="note">Each box has <strong>flex: 1 1 160px</strong> (grow, shrink, basis). Try resizing!</p>
+            </div>
+        </section>
+
+        <!-- ===== EXTRA: ALIGNMENT VARIATIONS (show different values) ===== -->
+        <section class="variant-section">
+            <h2>🔄 Alignment variations</h2>
+            <div class="variant-grid">
+                <!-- justify-content: flex-start -->
+                <div class="variant-card">
+                    <p><strong>justify-content: flex-start</strong></p>
+                    <div class="mini-flex start">
+                        <div class="mini-item">1</div>
+                        <div class="mini-item">2</div>
+                        <div class="mini-item">3</div>
+                    </div>
+                </div>
+                <!-- justify-content: center -->
+                <div class="variant-card">
+                    <p><strong>justify-content: center</strong></p>
+                    <div class="mini-flex center">
+                        <div class="mini-item">1</div>
+                        <div class="mini-item">2</div>
+                        <div class="mini-item">3</div>
+                    </div>
+                </div>
+                <!-- justify-content: space-between -->
+                <div class="variant-card">
+                    <p><strong>justify-content: space-between</strong></p>
+                    <div class="mini-flex between">
+                        <div class="mini-item">1</div>
+                        <div class="mini-item">2</div>
+                        <div class="mini-item">3</div>
+                    </div>
+                </div>
+                <!-- align-items: stretch (default) vs center -->
+                <div class="variant-card">
+                    <p><strong>align-items: stretch</strong> (default)</p>
+                    <div class="mini-flex stretch">
+                        <div class="mini-item tall">1</div>
+                        <div class="mini-item">2</div>
+                        <div class="mini-item tall">3</div>
+                    </div>
+                </div>
+                <div class="variant-card">
+                    <p><strong>align-items: center</strong></p>
+                    <div class="mini-flex align-center">
+                        <div class="mini-item tall">1</div>
+                        <div class="mini-item">2</div>
+                        <div class="mini-item tall">3</div>
+                    </div>
+                </div>
+            </div>
+            <p class="variant-note">⬆️ These mini-demos show different <code>justify-content</code> &amp; <code>align-items</code> values.</p>
+        </section>
+
+        <!-- spacer for scroll -->
+        <div style="height: 2rem;"></div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="page-footer">
+        <div class="footer-content">
+            <p>Flexbox Layout Demo · <span>responsive</span> <span>navbar</span> <span>flex-wrap</span> <span>justify-content</span> <span>align-items</span></p>
+            <p class="small">Open DevTools → Computed to inspect flex properties.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
