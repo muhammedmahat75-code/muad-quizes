@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics Practice</title>
+    <!-- External CSS linked with <link rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- PAGE HEADER -->
+    <header id="main-header">
+        <h1>🎨 CSS Basics Practice</h1>
+        <p class="subtitle">Mastering selectors, colors, fonts & text styles</p>
+    </header>
+
+    <!-- MAIN CONTENT: demonstrates element, class, ID, descendant, universal selectors -->
+    <main>
+        <!-- SECTION 1: selectors & colors -->
+        <section class="card">
+            <h2>🔍 Selector showcase</h2>
+            <p>This page uses <strong>five different selectors</strong> (element, class, ID, descendant, universal).</p>
+            <div class="demo-box">
+                <span class="highlight">class selector</span>
+                <span id="unique-demo">ID selector</span>
+                <span>element selector</span>
+            </div>
+            <div class="nested-demo">
+                <p>Descendant selector: <em>this em is inside a div with class .nested-demo</em></p>
+            </div>
+            <p class="note">Universal selector <span class="star">*</span> applied to all elements (border-box & margin reset).</p>
+        </section>
+
+        <!-- SECTION 2: fonts & text styles -->
+        <section class="card typography-card">
+            <h2>✒️ Fonts & text styles</h2>
+            <p class="font-demo serif">Serif font · classic & elegant</p>
+            <p class="font-demo sans">Sans‑serif · clean & modern</p>
+            <p class="font-demo mono">Monospace · code vibes</p>
+            <p class="text-style-demo">Text styles: <span class="italic">italic</span>, <span class="bold">bold</span>, <span class="underline">underline</span>, <span class="uppercase">uppercase</span>, <span class="shadow">shadow</span>.</p>
+            <p class="multi-style">Combined: <span class="fancy">fancy</span> & <span class="small-caps">small caps</span></p>
+        </section>
+
+        <!-- SECTION 3: grouped selectors example -->
+        <section class="card grouped-section">
+            <h2>📦 Grouped selectors</h2>
+            <div class="group-demo">
+                <p class="warning">Warning message</p>
+                <p class="success">Success message</p>
+                <p class="info">Information message</p>
+            </div>
+            <p class="group-note">These three messages share the same base styling via <strong>grouped selectors</strong> (padding, border-radius, margin).</p>
+        </section>
+    </main>
+
+    <!-- FOOTER with descendant selector example -->
+    <footer id="page-footer">
+        <div class="footer-content">
+            <p>CSS Basics Practice — <span>external stylesheet</span> | <span>5+ selectors</span></p>
+            <p class="small">Designed as a learning example · comments inside CSS</p>
+        </div>
+    </footer>
+</body>
+</html>
