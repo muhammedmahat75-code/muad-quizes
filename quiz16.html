@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using CSS Variables</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="page-header">
+        <h1>🎨 Using CSS Variables</h1>
+        <p class="subtitle">Custom properties · <code>--main-bg</code> · <code>--text-color</code> · <code>--accent</code></p>
+        <!-- Theme toggle button -->
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light mode">
+            🌙 Dark Mode
+        </button>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- ===== SECTION 1: Variables in action ===== -->
+        <section class="demo-section">
+            <h2>🔹 Variables applied to elements</h2>
+            <div class="variable-demo">
+                <div class="var-box box-1">
+                    <span>Box 1</span>
+                    <p>Background: <code>--main-bg</code></p>
+                </div>
+                <div class="var-box box-2">
+                    <span>Box 2</span>
+                    <p>Text: <code>--text-color</code></p>
+                </div>
+                <div class="var-box box-3">
+                    <span>Box 3</span>
+                    <p>Accent: <code>--accent</code></p>
+                </div>
+                <div class="var-box box-4">
+                    <span>Box 4</span>
+                    <p>Border: <code>--accent</code></p>
+                </div>
+            </div>
+            <p class="demo-note">⬆️ These boxes use <strong>--main-bg</strong>, <strong>--text-color</strong>, and <strong>--accent</strong>.</p>
+        </section>
+
+        <!-- ===== SECTION 2: Cards with variables ===== -->
+        <section class="cards-section">
+            <h2>🔸 Cards using custom properties</h2>
+            <div class="card-grid">
+                <div class="var-card card-a">
+                    <div class="card-icon">📘</div>
+                    <h3>Primary Card</h3>
+                    <p>Uses <code>--main-bg</code> and <code>--text-color</code>.</p>
+                </div>
+                <div class="var-card card-b">
+                    <div class="card-icon">📗</div>
+                    <h3>Accent Card</h3>
+                    <p>Uses <code>--accent</code> for background.</p>
+                </div>
+                <div class="var-card card-c">
+                    <div class="card-icon">📙</div>
+                    <h3>Mixed Card</h3>
+                    <p>Border and shadow use <code>--accent</code>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3: Interactive demo ===== -->
+        <section class="interactive-section">
+            <h2>🔄 Changing one variable affects everything</h2>
+            <div class="interactive-demo">
+                <div class="demo-content">
+                    <p>This entire page uses <strong>CSS variables</strong>. Toggle the theme above to change:</p>
+                    <ul>
+                        <li><span class="var-indicator bg-indicator"></span> <code>--main-bg</code> — background color</li>
+                        <li><span class="var-indicator text-indicator"></span> <code>--text-color</code> — text color</li>
+                        <li><span class="var-indicator accent-indicator"></span> <code>--accent</code> — accent color</li>
+                    </ul>
+                    <p class="highlight-demo">💡 <strong>Try it!</strong> Click the "🌙 Dark Mode" button to see all colors update instantly.</p>
+                </div>
+                <div class="demo-preview">
+                    <div class="preview-box">
+                        <span>Preview</span>
+                        <p>This box uses <code>--main-bg</code>, <code>--text-color</code>, and <code>--accent</code> for its border.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 4: Button styles using variables ===== -->
+        <section class="buttons-section">
+            <h2>🔘 Buttons with variable-based styles</h2>
+            <div class="button-group">
+                <button class="var-btn btn-primary">Primary</button>
+                <button class="var-btn btn-accent">Accent</button>
+                <button class="var-btn btn-outline">Outline</button>
+                <button class="var-btn btn-text">Text only</button>
+            </div>
+            <p class="btn-note">All button colors are controlled by <code>--accent</code> and <code>--text-color</code>.</p>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="page-footer">
+        <div class="footer-content">
+            <p>CSS Variables Demo · <span>--main-bg</span> <span>--text-color</span> <span>--accent</span> <span>dark/light</span></p>
+            <p class="small">One variable change updates the entire design.</p>
+        </div>
+    </footer>
+
+    <!-- ===== THEME TOGGLE SCRIPT ===== -->
+    <script>
+        (function() {
+            const toggleBtn = document.getElementById('theme-toggle');
+            const root = document.documentElement;
+
+            // Check stored preference
+            let currentTheme = localStorage.getItem('theme') || 'light';
+            applyTheme(currentTheme);
+
+            toggleBtn.addEventListener('click', function() {
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                applyTheme(newTheme);
+                currentTheme = newTheme;
+                localStorage.setItem('theme', newTheme);
+            });
+
+            function applyTheme(theme) {
+                if (theme === 'dark') {
+                    root.classList.add('dark-theme');
+                    toggleBtn.textContent = '☀️ Light Mode';
+                } else {
+                    root.classList.remove('dark-theme');
+                    toggleBtn.textContent = '🌙 Dark Mode';
+                }
+            }
+        })();
+    </script>
+
+</body>
+</html>
