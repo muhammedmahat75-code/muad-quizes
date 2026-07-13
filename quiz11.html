@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positioning Demo</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== STICKY HEADER (position: sticky) ===== -->
+    <header id="sticky-header">
+        <div class="header-inner">
+            <h1>📍 Positioning Demo</h1>
+            <nav>
+                <span>static</span>
+                <span>relative</span>
+                <span>absolute</span>
+                <span>fixed</span>
+                <span class="sticky-badge">sticky</span>
+            </nav>
+        </div>
+        <p class="sticky-note">⬆️ This header is <strong>position: sticky</strong> — it sticks to the top when scrolling.</p>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+        <!-- intro -->
+        <section class="intro-card">
+            <h2>Four positioning types + sticky header</h2>
+            <p>Each colored box shows a different <code>position</code> value. <br />Scroll the page to see <strong>fixed</strong> (bottom-right) and <strong>sticky</strong> (header) in action.</p>
+            <p class="hint">📐 Use DevTools → Elements → Computed to inspect each box's position.</p>
+        </section>
+
+        <!-- ===== POSITION: STATIC (default) ===== -->
+        <section class="demo-section">
+            <h2>🔹 position: static</h2>
+            <div class="pos-box static-box">
+                <span class="pos-label">static</span>
+                <p>Default flow. <br />Top/left/right/bottom <strong>have no effect</strong>.</p>
+                <div class="box-content">
+                    <span class="inline-tag">📄 normal flow</span>
+                </div>
+            </div>
+            <div class="explanation">
+                <p><strong>static</strong> is the default. The box stays in the normal document flow. Offset properties (top, left, etc.) are ignored.</p>
+            </div>
+        </section>
+
+        <!-- ===== POSITION: RELATIVE ===== -->
+        <section class="demo-section">
+            <h2>🔸 position: relative</h2>
+            <div class="pos-box relative-box">
+                <span class="pos-label">relative</span>
+                <p>Offset from its <strong>normal position</strong>.<br /> (top: 20px; left: 30px)</p>
+                <div class="box-content">
+                    <span class="inline-tag">↕️ shifted</span>
+                </div>
+            </div>
+            <div class="explanation">
+                <p><strong>relative</strong> positions the box relative to where it would normally be. Other content is not affected (gap remains).</p>
+            </div>
+        </section>
+
+        <!-- ===== POSITION: ABSOLUTE (with relative container) ===== -->
+        <section class="demo-section absolute-container">
+            <h2>🔶 position: absolute</h2>
+            <div class="pos-wrapper">
+                <!-- this wrapper has position: relative to act as anchor -->
+                <div class="pos-box absolute-box">
+                    <span class="pos-label">absolute</span>
+                    <p>Positioned relative to <strong>nearest positioned ancestor</strong>.<br /> (top: 10px; right: 10px)</p>
+                    <div class="box-content">
+                        <span class="inline-tag">🎯 anchored</span>
+                    </div>
+                </div>
+                <div class="dummy-content">
+                    <p>⬅️ This container is <code>position: relative</code>.<br />The <strong>absolute</strong> box is placed inside it using <code>top: 10px; right: 10px;</code></p>
+                </div>
+            </div>
+            <div class="explanation">
+                <p><strong>absolute</strong> removes the element from the normal flow and positions it relative to the nearest positioned ancestor (here, the .pos-wrapper).</p>
+            </div>
+        </section>
+
+        <!-- ===== POSITION: FIXED (bottom-right corner) ===== -->
+        <!-- fixed box is placed outside the normal flow, we put it in a container but it will be fixed to viewport -->
+        <section class="demo-section">
+            <h2>🔷 position: fixed</h2>
+            <div class="pos-box fixed-box">
+                <span class="pos-label">fixed</span>
+                <p>Positioned relative to the <strong>viewport</strong>.<br /> (bottom: 30px; right: 30px)</p>
+                <div class="box-content">
+                    <span class="inline-tag">📌 always visible</span>
+                </div>
+            </div>
+            <div class="explanation">
+                <p><strong>fixed</strong> is positioned relative to the viewport. It stays in the same place even when scrolling. (This box is in the bottom-right corner.)</p>
+            </div>
+        </section>
+
+        <!-- spacer to allow scrolling for fixed & sticky demo -->
+        <div class="spacer"></div>
+        <div class="spacer-message">
+            <p>⬇️ Scroll down to see <strong>fixed</strong> box stay in place and <strong>sticky</strong> header stick to the top.</p>
+        </div>
+        <div class="spacer"></div>
+
+        <!-- extra space for scrolling -->
+        <div style="height: 40vh; background: transparent;"></div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="page-footer">
+        <div class="footer-content">
+            <p>Positioning Demo · <span>static</span> <span>relative</span> <span>absolute</span> <span>fixed</span> <span>sticky</span></p>
+            <p class="small">Open DevTools → Computed to inspect position values.</p>
+        </div>
+    </footer>
+
+    <!-- ===== FIXED BOX (placed outside main for clarity, but we'll keep it inside a container) ===== -->
+    <!-- The fixed box is already inside the section above, but we want it to be fixed to viewport.
+         We use a separate fixed element to avoid confusion with the section's flow. -->
+    <!-- Actually we already have .fixed-box inside .demo-section, but we need to make it fixed.
+         We'll keep the one inside the section but also add an extra fixed badge for visibility -->
+    <div class="fixed-corner-badge">
+        <span>📌 fixed</span>
+        <small>bottom: 30px; right: 30px;</small>
+    </div>
+
+</body>
+</html>
