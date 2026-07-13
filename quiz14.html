@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Layout</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="page-header">
+        <h1>📱 Responsive Layout</h1>
+        <p class="subtitle">Media queries: <strong>mobile</strong> · <strong>tablet</strong> · <strong>desktop</strong></p>
+        <p class="indicator" id="breakpoint-indicator">📐 Current: <span>Desktop</span></p>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- ===== RESPONSIVE IMAGE ===== -->
+        <section class="image-section">
+            <h2>🖼️ Responsive image</h2>
+            <div class="image-wrapper">
+                <img 
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'%3E%3Crect width='800' height='400' fill='%23e2e8f0'/%3E%3Ctext x='400' y='200' font-family='Segoe UI, sans-serif' font-size='32' fill='%23475569' text-anchor='middle' dominant-baseline='central'%3EResponsive Image %3C/t%3E%3Ctext x='400' y='250' font-family='Segoe UI, sans-serif' font-size='20' fill='%2364748b' text-anchor='middle' dominant-baseline='central'%3Emax-width: 100%25; height: auto%3C/t%3E%3C/svg%3E"
+                    alt="Responsive placeholder image"
+                    class="responsive-img"
+                />
+                <p class="img-caption">This image uses <code>max-width: 100%; height: auto;</code> to scale with its container.</p>
+            </div>
+        </section>
+
+        <!-- ===== RESPONSIVE CARDS (layout changes at breakpoints) ===== -->
+        <section class="cards-section">
+            <h2>📦 Responsive cards</h2>
+            <p class="section-desc">On <strong>desktop</strong> (≥1024px): 3 columns · <strong>tablet</strong> (768–1023px): 2 columns · <strong>mobile</strong> (&lt;768px): 1 column</p>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Desktop</h3>
+                    <p>≥1024px · 3 columns · background: <span class="color-dot desktop-dot"></span> #f0f7ff</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3>Tablet</h3>
+                    <p>768–1023px · 2 columns · background: <span class="color-dot tablet-dot"></span> #fef9c3</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📲</div>
+                    <h3>Mobile</h3>
+                    <p>&lt;768px · 1 column · background: <span class="color-dot mobile-dot"></span> #fce7f3</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Typography</h3>
+                    <p>Text size changes: <span class="text-size-demo">desktop 1.1rem → mobile 0.95rem</span></p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📐</div>
+                    <h3>Layout</h3>
+                    <p>Grid &amp; flex adjust to avoid horizontal scroll.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h3>Breakpoints</h3>
+                    <p>768px · 1024px · colors &amp; spacing change.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RESPONSIVE CONTENT BLOCK ===== -->
+        <section class="content-block">
+            <h2>📝 Content area</h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <p>This layout uses <strong>media queries</strong> to adjust:</p>
+                    <ul>
+                        <li><span class="highlight-bg">Background color</span> changes at each breakpoint.</li>
+                        <li><span class="highlight-bg">Text size</span> scales for readability.</li>
+                        <li><span class="highlight-bg">Grid columns</span> adapt from 3 → 2 → 1.</li>
+                        <li><span class="highlight-bg">Padding &amp; margins</span> are reduced on small screens.</li>
+                    </ul>
+                    <p class="note">Resize your browser to see the changes in real time.</p>
+                </div>
+                <div class="content-visual">
+                    <div class="visual-box desktop-box">🖥️ Desktop</div>
+                    <div class="visual-box tablet-box">📟 Tablet</div>
+                    <div class="visual-box mobile-box">📱 Mobile</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="page-footer">
+        <div class="footer-content">
+            <p>Responsive Layout · <span>media queries</span> <span>mobile</span> <span>tablet</span> <span>desktop</span></p>
+            <p class="small">Open DevTools → Toggle device toolbar to test breakpoints.</p>
+        </div>
+    </footer>
+
+    <!-- small script to show current breakpoint -->
+    <script>
+        (function updateBreakpoint() {
+            const indicator = document.querySelector('#breakpoint-indicator span');
+            if (!indicator) return;
+            function getBreakpoint() {
+                const w = window.innerWidth;
+                if (w >= 1024) return 'Desktop (≥1024px)';
+                if (w >= 768) return 'Tablet (768–1023px)';
+                return 'Mobile (<768px)';
+            }
+            function update() {
+                indicator.textContent = getBreakpoint();
+            }
+            update();
+            window.addEventListener('resize', update);
+        })();
+    </script>
+
+</body>
+</html>
