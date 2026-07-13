@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Gallery</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="page-header">
+        <h1>🖼️ Grid Gallery</h1>
+        <p class="subtitle">CSS Grid with <code>grid-template-columns</code>, <code>grid-gap</code>, and a <strong>featured</strong> item spanning multiple rows &amp; columns.</p>
+    </header>
+
+    <!-- ===== GRID GALLERY ===== -->
+    <section class="gallery-section">
+        <div class="grid-gallery">
+
+            <!-- Item 1 – featured: spans 2 rows and 2 columns -->
+            <figure class="grid-item featured">
+                <div class="image-block" style="background: linear-gradient(135deg, #fef9c3, #f59e0b);">
+                    <span class="badge">✨ featured</span>
+                    <span class="icon">🏞️</span>
+                </div>
+                <figcaption>Featured · spans 2 rows &amp; 2 cols</figcaption>
+            </figure>
+
+            <!-- Item 2 -->
+            <figure class="grid-item">
+                <div class="image-block" style="background: linear-gradient(135deg, #d1fae5, #10b981);">
+                    <span class="icon">🌿</span>
+                </div>
+                <figcaption>Green · nature</figcaption>
+            </figure>
+
+            <!-- Item 3 -->
+            <figure class="grid-item">
+                <div class="image-block" style="background: linear-gradient(135deg, #dbeafe, #3b82f6);">
+                    <span class="icon">🌊</span>
+                </div>
+                <figcaption>Blue · ocean</figcaption>
+            </figure>
+
+            <!-- Item 4 -->
+            <figure class="grid-item">
+                <div class="image-block" style="background: linear-gradient(135deg, #fce7f3, #db2777);">
+                    <span class="icon">🌸</span>
+                </div>
+                <figcaption>Pink · blossom</figcaption>
+            </figure>
+
+            <!-- Item 5 -->
+            <figure class="grid-item">
+                <div class="image-block" style="background: linear-gradient(135deg, #e0f2fe, #0284c7);">
+                    <span class="icon">☀️</span>
+                </div>
+                <figcaption>Sky · sunshine</figcaption>
+            </figure>
+
+            <!-- Item 6 -->
+            <figure class="grid-item">
+                <div class="image-block" style="background: linear-gradient(135deg, #f3e8ff, #7c3aed);">
+                    <span class="icon">🎨</span>
+                </div>
+                <figcaption>Purple · art</figcaption>
+            </figure>
+
+        </div>
+        <!-- end grid-gallery -->
+
+        <div class="gallery-info">
+            <p>
+                <span class="tag">grid-template-columns: repeat(4, 1fr)</span>
+                <span class="tag">grid-gap: 20px</span>
+                <span class="tag">featured: grid-column: span 2; grid-row: span 2</span>
+            </p>
+            <p class="note">📐 Resize the browser to see the grid adapt (auto-fit on smaller screens).</p>
+        </div>
+    </section>
+
+    <!-- ===== EXTRA: GRID ALTERNATIVE LAYOUT (for comparison) ===== -->
+    <section class="extra-section">
+        <h2>🔁 Alternative: <code>grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))</code></h2>
+        <p class="extra-desc">This responsive grid automatically adjusts the number of columns based on available space.</p>
+        <div class="grid-alt">
+            <div class="alt-item" style="background: #fef9c3;">A</div>
+            <div class="alt-item" style="background: #d1fae5;">B</div>
+            <div class="alt-item" style="background: #dbeafe;">C</div>
+            <div class="alt-item" style="background: #fce7f3;">D</div>
+            <div class="alt-item" style="background: #e0f2fe;">E</div>
+            <div class="alt-item" style="background: #f3e8ff;">F</div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="page-footer">
+        <div class="footer-content">
+            <p>Grid Gallery · <span>grid-template-columns</span> <span>grid-gap</span> <span>span</span> <span>figcaption</span></p>
+            <p class="small">Open DevTools → Layout to inspect grid lines.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
