@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding the Box Model</title>
+    <!-- External CSS linked with <link rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- PAGE HEADER -->
+    <header id="main-header">
+        <h1>📦 Understanding the Box Model</h1>
+        <p class="subtitle">Margin · Padding · Border · Width / Height</p>
+        <p class="instruction">Open DevTools (Inspect) → Elements → Computed to see each box's dimensions</p>
+    </header>
+
+    <!-- MAIN: three box model demonstrations -->
+    <main>
+        <!-- BOX 1: DEFAULT / CONTENT-BOX (standard) -->
+        <section class="box-card" id="box-default">
+            <h2>🔲 Box 1: <span class="highlight">content-box</span> (default)</h2>
+            <div class="box-demo default-box">
+                <div class="inner-content">
+                    <strong>content</strong>
+                    <p>width: 200px<br />height: 120px</p>
+                </div>
+            </div>
+            <div class="explanation">
+                <p><strong>margin:</strong> 30px (outside) &nbsp;|&nbsp; <strong>padding:</strong> 20px (inside) &nbsp;|&nbsp; <strong>border:</strong> 6px solid</p>
+                <p>📐 <strong>Total width</strong> = width + padding + border = <span class="calc">200 + 40 + 12 = 252px</span></p>
+                <p class="note">The <code>content-box</code> model adds padding &amp; border <strong>outside</strong> the set width/height.</p>
+            </div>
+        </section>
+
+        <!-- BOX 2: BORDER-BOX (modern) -->
+        <section class="box-card" id="box-border">
+            <h2>🔲 Box 2: <span class="highlight">border-box</span> (modern)</h2>
+            <div class="box-demo border-box-demo">
+                <div class="inner-content">
+                    <strong>content</strong>
+                    <p>width: 200px<br />height: 120px</p>
+                    <span class="badge">border-box</span>
+                </div>
+            </div>
+            <div class="explanation">
+                <p><strong>margin:</strong> 30px &nbsp;|&nbsp; <strong>padding:</strong> 20px &nbsp;|&nbsp; <strong>border:</strong> 6px solid</p>
+                <p>📐 <strong>Total width</strong> = width (includes padding + border) = <span class="calc">200px</span></p>
+                <p class="note">With <code>border-box</code>, padding and border are <strong>inside</strong> the defined width/height. Much easier to control!</p>
+            </div>
+        </section>
+
+        <!-- BOX 3: EXTREME MARGIN / PADDING (demonstrates effect) -->
+        <section class="box-card" id="box-extreme">
+            <h2>🔲 Box 3: <span class="highlight">large margin &amp; padding</span></h2>
+            <div class="box-demo extreme-box">
+                <div class="inner-content">
+                    <strong>content</strong>
+                    <p>width: 180px<br />height: 100px</p>
+                    <span class="badge">+ 48px padding</span>
+                </div>
+            </div>
+            <div class="explanation">
+                <p><strong>margin:</strong> 40px  (huge) &nbsp;|&nbsp; <strong>padding:</strong> 48px (thick) &nbsp;|&nbsp; <strong>border:</strong> 10px dotted</p>
+                <p>📐 <strong>Total width</strong> = width + padding + border = <span class="calc">180 + 96 + 20 = 296px</span></p>
+                <p class="note">Big margins push other elements away; big padding expands the inner space. <br />Notice how the background fills the padding area.</p>
+            </div>
+        </section>
+
+        <!-- BONUS: VISUAL COMPARISON WITH FLOATING BOXES (side by side) -->
+        <section class="box-card comparison-card">
+            <h2>📊 Side-by-side comparison</h2>
+            <div class="comparison-group">
+                <div class="comp-item content-box-comp">
+                    <p><strong>content-box</strong></p>
+                    <div class="mini-box"></div>
+                    <p class="dim">252px total</p>
+                </div>
+                <div class="comp-item border-box-comp">
+                    <p><strong>border-box</strong></p>
+                    <div class="mini-box"></div>
+                    <p class="dim">200px total</p>
+                </div>
+                <div class="comp-item extreme-comp">
+                    <p><strong>large padding</strong></p>
+                    <div class="mini-box"></div>
+                    <p class="dim">296px total</p>
+                </div>
+            </div>
+            <p class="instruction">🖱️ Use DevTools (Inspect) → hover over each box to see the margin/padding/border highlighted.</p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="page-footer">
+        <div class="footer-content">
+            <p>📐 Box Model Practice · <span>margin</span> <span>padding</span> <span>border</span> <span>width/height</span></p>
+            <p class="small">Open DevTools → Computed to confirm dimensions. Screenshot ready.</p>
+        </div>
+    </footer>
+</body>
+</html>
